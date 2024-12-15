@@ -2,23 +2,31 @@
 
 Kitty is a terminal emulator. It is fast and highly customizable.
 
-First create directiries for configuration file and color themes.
+First install kitty (the latest release). 
+
+```shell
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+# mv it to /usr/local
+sudo mv ~/.local/kitty.app /usr/local/
+# and create symlinks
+sudo ln -s /usr/local/kitty.app/bin/kitty /usr/local/bin/kitty
+sudo ln -s /usr/local/kitty.app/bin/kitten /usr/local/bin/kitten
+# register kitty as a terminal emulator
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/kitty 50
+# and set it as the default one
+sudo update-alternatives --config x-terminal-emulator
+```
+
+Then create directories for configuration files and color themes.
 ```shell
 mkdir ~/.config/kitty
-touch ~/.config/kitty/kitty.conf
-mkdir ~/.config/kitty/kitty-themes/
+cp ./kitty/kitty.conf ~/.config/kitty/
 ```
 
-Download color themes from kitty-themes repo.
+Install Hack Nerd Font from [here](https://www.nerdfonts.com/font-downloads). 
+
+Last but not least, set color-theme for kitty (I love Catppuccin-Macchiato).
+
 ```shell
-git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
+kitten theme
 ```
-
-Create a symbolic link to theme (I like Chalk theme).
-```shell
-ln -s kitty-themes/themes/Chalk.conf theme.conf 
-```
-
-Install Hack font from [here](https://sourcefoundry.org/hack/).
-
-Copy the content of the kitty.conf file from here to the file in your system.
