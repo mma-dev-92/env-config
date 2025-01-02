@@ -30,3 +30,7 @@ nvim --version  # to check if the installation was successful
 
 Remove the directory containing cloned repo, you do not need it anymore.
 
+## Configuration files
+
+Copy the `nvim/nvim` directory to the location for your nvmi configuration.
+

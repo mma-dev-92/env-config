@@ -1,0 +1,6 @@
+TODO:
+
+1. Install stylua via Mason [for lua]
+2. Install black, isort via Mason [for python]
+3. Install fd-find (for venv-selector.nvim)
+
