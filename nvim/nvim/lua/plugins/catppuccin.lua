@@ -1,12 +1,10 @@
 return {
   "catppuccin/nvim",
-  name = "catppuccin",
+  name = "catppuccin-macchiato",
   priority = 1000,
   config = function()
     require("catppuccin").setup({
-      integrations = {
-        nvimtree = true,
-      },
+      default_integrations = false,
     })
     vim.cmd.colorscheme "catppuccin-macchiato"
   end
