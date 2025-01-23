@@ -30,3 +30,4 @@ Last but not least, set color-theme for kitty (I love Catppuccin-Macchiato).
 ```shell
 kitten theme
 ```
+
