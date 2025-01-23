@@ -21,4 +21,18 @@ cd
 sudo rm -rf yazi
 ```
 
-## Configuration
+## Theme configuration 
+
+First, create configuration file for yazi
+
+```shell
+mkdir ~/.config/yazi
+touch ~/.config/yazi/yazi.toml
+touch ~/.config/yazi/theme.toml
+```
+
+Next, copy content of [this file][https://github.com/catppuccin/yazi/blob/main/themes/macchiato/catppuccin-macchiato-green.toml] to the `yazi.toml` file.
+
+## Configuration file
+
+At the end copy `yazi.toml` file from yazi direcdtory to `~/.config/yazi` dir.
