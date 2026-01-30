@@ -1,0 +1,19 @@
+name: cdcpf
+root: ~/Projects/cdcpf
+
+windows:
+  - cli-tools:
+      layout: 23bd,285x57,0,0{132x57,0,0[132x36,0,0,0,132x20,0,37,2],152x57,133,0,1}
+      panes:
+        - yazi:
+            - yazi
+
+        - terminal:
+            - source .venv/bin/activate
+
+        - repo:
+            - lazygit
+  - code:
+      panes:
+        - editor:
+            - nvim
