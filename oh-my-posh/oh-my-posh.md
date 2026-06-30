@@ -24,8 +24,10 @@ mkdir ~/.config/poshthemes/
 cp oh-my-posh/my-theme.omp.json ~/.config/poshthemes/
 ```
 
-and add the following line to `~/.bashrc` file.
+Add the following line to `~/.bashrc` file.
 
 ```shell
-oh-my-posh --init --shell bash --config ~/.config/poshthemes/my-theme.omp.json
+eval "$(oh-my-posh init bash --config ~/.config/poshthemes/my-theme.omp.json)"
+```
+```
 ```
