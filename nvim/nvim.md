@@ -34,3 +34,10 @@ Remove the directory containing cloned repo, you do not need it anymore.
 
 Copy the `nvim/nvim` directory to the location for your nvmi configuration.
 
+## Python packages:
+
+```shell
+sudo pacman -S python-black python-isort
+pip install pynvim
+```
+
