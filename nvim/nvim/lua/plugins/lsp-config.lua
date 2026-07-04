@@ -19,12 +19,16 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local on_attach = function(_, bufnr)
-				local opts = { buffer = bufnr, desc = "LSP: " }
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code Actions", buffer = bufnr })
+				local map = function(keys, func, desc)
+					vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+				end
+
+				map("K",           vim.lsp.buf.hover,       "Hover documentation")
+				map("gd",          vim.lsp.buf.definition,  "Go to definition")
+				map("gD",          vim.lsp.buf.declaration, "Go to declaration")
+				map("gr",          vim.lsp.buf.references,  "Go to references")
+				map("<leader>cr",  vim.lsp.buf.rename,      "Rename symbol")
+				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code actions" })
 			end
 
 			vim.lsp.config("*", {
