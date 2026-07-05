@@ -6,6 +6,18 @@ return {
 		end,
 	},
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = { "williamboman/mason.nvim" },
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"stylua",
+					"luacheck",
+				},
+			})
+		end,
+	},
+	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
@@ -23,12 +35,17 @@ return {
 					vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 				end
 
-				map("K",           vim.lsp.buf.hover,       "Hover documentation")
-				map("gd",          vim.lsp.buf.definition,  "Go to definition")
-				map("gD",          vim.lsp.buf.declaration, "Go to declaration")
-				map("gr",          vim.lsp.buf.references,  "Go to references")
-				map("<leader>cr",  vim.lsp.buf.rename,      "Rename symbol")
-				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr, desc = "Code actions" })
+				map("K", vim.lsp.buf.hover, "Hover documentation")
+				map("gd", vim.lsp.buf.definition, "Go to definition")
+				map("gD", vim.lsp.buf.declaration, "Go to declaration")
+				map("gr", vim.lsp.buf.references, "Go to references")
+				map("<leader>cr", vim.lsp.buf.rename, "Rename symbol")
+				vim.keymap.set(
+					{ "n", "v" },
+					"<leader>ca",
+					vim.lsp.buf.code_action,
+					{ buffer = bufnr, desc = "Code actions" }
+				)
 			end
 
 			vim.lsp.config("*", {
