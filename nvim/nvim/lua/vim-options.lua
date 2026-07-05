@@ -11,5 +11,5 @@ vim.wo.fillchars = "eob: "
 -- Highlighting current line
 vim.opt.cursorline = true
 vim.cmd([[ highlight CursorLine guibg=#2C2C2C ]])
-vim.keymap.set({ "n", "v" }, "<C-/>", "gc", { desc = "Toggle comment", remap = true })
-vim.keymap.set({ "n", "v" }, "<C-/>", "gcc", { desc = "Toggle comment", remap = true })
+vim.keymap.set({ "n", "v" }, "<C-/>", "gc", { desc = "Comment current line", remap = true })
+vim.keymap.set({ "n", "v" }, "<C-/>", "gcc", { desc = "Comment highlighted region", remap = true })
